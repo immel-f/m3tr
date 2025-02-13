@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>M3TR: Generalist HD Map Construction with Variable Map Priors</title>
+  <link rel="icon" type="image/x-icon" href="static/images/icon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <style>
+    .carousel {
+      display: flex;
+      justify-content: center;
+      /* Centers the items horizontally */
+      align-items: center;
+      /* Centers the items vertically */
+    }
+
+    .item-video1 {
+      display: flex;
+      justify-content: center;
+      /* Centers the video within the item */
+      align-items: center;
+      /* Centers the video within the item */
+    }
+
+    .item-video2 {
+      display: flex;
+      justify-content: center;
+      /* Centers the video within the item */
+      align-items: center;
+      /* Centers the video within the item */
+    }
+
+    .is-3 {
+      display: flex;
+      justify-content: center;
+      /* Centers the video within the item */
+      align-items: center;
+      /* Centers the video within the item */
+    }
+
+    video {
+      max-width: 100%;
+      /* Ensures the video doesn't overflow the container */
+      height: auto;
+      /* Maintains the aspect ratio */
+    }
+
+    .carousel-image {
+      max-width: 80%;
+      /* Adjust the percentage as needed */
+      height: auto;
+      /* Maintains the aspect ratio */
+      display: block;
+      /* Centers the image */
+      margin: 0 auto;
+      /* Centers the image */
+    }
+
+    .carousel-image-qual {
+      max-width: 95%;
+      /* Adjust the percentage as needed */
+      height: auto;
+      /* Maintains the aspect ratio */
+      display: block;
+      /* Centers the image */
+      margin: 0 auto;
+      /* Centers the image */
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">M3TR: Generalist HD Map Construction with Variable Map Priors</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=de&user=uHlmd9QAAAAJ&view_op=list_works&sortby=pubdate"
+                  target="_blank">Fabian Immel</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=de&user=gOQYH4AAAAAJ&view_op=list_works&sortby=pubdate"
+                  target="_blank">Richard Fehler</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=mAMWuMUAAAAJ&hl=de&oi=ao" target="_blank">Frank
+                  Bieder</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=0LbD7HUAAAAJ&hl=de&oi=ao" target="_blank">Jan-Hendrik
+                  Pauls</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=OeAQ2c0AAAAJ&hl=de&oi=ao" target="_blank">Christoph
+                  Stiller</a><sup>2</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>FZI Research Center for Information Technology, &nbsp;
+                <sup>2</sup>Karlsruhe Institute of Technology</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2411.10316" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- Supplementary PDF link 
+                <span class="link-block">
+                  <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Supplementary</span>
+                  </a>
+                </span> -->
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/immel-f/m3tr" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2411.10316" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <!-- <h2 class="title is-3">M3TR Generalist Model With and Without a Map Prior</h2> -->
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-video1">
+            <video poster="" id="video1" autoplay controls muted loop height="100%">
+              <!-- Your video file here -->
+              <source src="static/videos/surround_view_m3tr_generalist_ego_lane_masked_out.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video2">
+            <video poster="" id="video2" autoplay controls muted loop height="100%">
+              <!-- Your video file here -->
+              <source src="static/videos/surround_view_m3tr_generalist_no_prior.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End video carousel -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Autonomous vehicles require road information for their operation, usually in form of HD maps.
+              Since offline maps eventually become outdated or may only be partially available, online HD map
+              construction methods have been pro- posed to infer map information from live sensor data.
+              A key issue remains how to exploit such partial or outdated map information as a prior.
+              We introduce M3TR (Multi- Masking Map Transformer), a generalist approach for HD map construction
+              both with and without map priors. We address shortcomings in ground truth generation for Argoverse 2
+              and nuScenes and propose the first realistic scenarios with semantically diverse map priors.
+              Examining various query designs, we use an improved method for integrating prior map elements
+              into a HD map construction model, increasing performance by +4.3 mAP. Finally, we show that
+              training across all prior scenarios yields a single Generalist model, whose performance is on par
+              with previous Expert models that can handle only one specific type of map prior. M3TR thus is
+              the first model capable of leveraging variable map priors, making it suitable for real-world deployment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+  <!-- Image carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-2">Overview</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <!-- Your image here -->
+            <img src="static/images/m3tr_overview.png" alt="MY ALT TEXT" class="carousel-image" />
+            <h2 class="subtitle has-text-centered">
+              Overview of the model architecture of M3TR and the investigated point query encoder designs.
+            </h2>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+            <img src="static/images/m3tr_overview_2.png" alt="MY ALT TEXT" class="carousel-image" />
+            <h2 class="subtitle has-text-centered">
+              Further Innovations in Model Architecture and Setting
+            </h2>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+            <img src="static/images/av2_table.png" alt="MY ALT TEXT" class="carousel-image" />
+            <h2 class="subtitle has-text-centered">
+              Evaluation Results on Argoverse 2
+            </h2>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+            <img src="static/images/other_tables.png" alt="MY ALT TEXT" class="carousel-image" />
+            <h2 class="subtitle has-text-centered">
+              Ablation Studies and Evaluation Results on nuScenes
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End image carousel -->
+
+
+  <!-- Image carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-2">More Qualitative Results</h2>
+        <div id="results-carousel qual" class="carousel results-carousel">
+          <div class="item">
+            <!-- Your image here -->
+            <img src="static/images/qual_examples_1.png" alt="MY ALT TEXT" class="carousel-image-qual" />
+            <h2 class="subtitle has-text-centered">
+              Qualitative comparisons of different existing expert approaches with the single M3TR Generalist model.
+            </h2>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+            <img src="static/images/qual_ex_no_prior.png" alt="MY ALT TEXT" class="carousel-image-qual" />
+            <h2 class="subtitle has-text-centered">
+              Qualitative comparisons of different existing expert approaches with the single M3TR Generalist model.
+            </h2>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+            <img src="static/images/qual_ex_el_prior.png" alt="MY ALT TEXT" class="carousel-image-qual" />
+            <h2 class="subtitle has-text-centered">
+              Qualitative comparisons of different existing expert approaches with the single M3TR Generalist model.
+            </h2>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+            <img src="static/images/qual_ex_centerline_prior.png" alt="MY ALT TEXT" class="carousel-image-qual" />
+            <h2 class="subtitle has-text-centered">
+              Qualitative comparisons of different existing expert approaches with the single M3TR Generalist model
+            </h2>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+            <img src="static/images/qual_ex_rb_prior.png" alt="MY ALT TEXT" />
+            <h2 class="subtitle has-text-centered">
+              Qualitative comparisons of different existing expert approaches with the single M3TR Generalist model.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End image carousel -->
+
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{immel2024m3trgeneralisthdmap,
+        title={M3TR: Generalist HD Map Construction with Variable Map Priors}, 
+        author={Fabian Immel and Richard Fehler and Frank Bieder and Jan-Hendrik Pauls and Christoph Stiller},
+        year={2024},
+        eprint={2411.10316},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={https://arxiv.org/abs/2411.10316}, 
+      }</code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the
+              footer. <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
